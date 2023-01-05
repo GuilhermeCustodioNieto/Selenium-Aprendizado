@@ -1,0 +1,58 @@
+aula 3: primeira automação
+FIREFOX:
+---------------------------------------------------------------------
+from selenium import webdriver
+from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.firefox.service import Service
+
+servico = Service(GeckoDriverManager().install())
+navegador = webdriver.Firefox(service=servico)
+---------------------------------------------------------------------
+codigo para rodar em firefox 
+
+CHROME
+---------------------------------------------------------------------
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+
+servico = Service(ChromeDriverManager().install())
+navegador = webdriver.Chrome(service=servico)
+---------------------------------------------------------------------
+mesmo codigo mas para o chrome
+
+CODIGOS:
+navegador.quit()
+para fechar o navegador
+
+navegador.get('insira seu link aqui')
+para abrirum site atraves do seu link
+
+existe a função para encontrar um elemento HTML, é essa:
+navegador.find_element()
+
+se existe mais de um elemento HTML "igual" (como mais de um paragrafo) o find_element só vai pegar o primeiro do site, mas se você quiser outro é só trocar find_element por find_elements
+ou seja, cloque um find elements para encontrar um elemento com a mesma identificação no texto
+navegador.find_elements()
+
+e ela precisa que você especifique o tipo e um "identificador" do seu elemento, como seu id por exemplo, são os tipos de elementos
+ID = "id"
+NAME = "name"
+XPATH = "xpath"
+LINK_TEXT = "link text"
+PARTIAL_LINK_TEXT = "partial link text"
+TAG_NAME = "tag name"
+CLASS_NAME = "class name"
+CSS_SELECTOR = "css selector"
+---------------------------------------------------------------------
+
+todos os valores HTML são strings quando chamadas para o python
+para pegar o texto de um elemento html é só colocar .text no final:
+
+ps = navegador.find_element(By.TAG_NAME, 'p')
+ps.text
+---------------------------------------------------------------------
+para pegar um atributo é só usar o metodo get_attribute:
+
+atributo = navegador.get_attribute('nome do atributo')
+---------------------------------------------------------------------
