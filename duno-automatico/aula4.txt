@@ -1,0 +1,42 @@
+aula4
+
+--------------------------------------------------------------------
+a função:
+get_attribute ()
+vai pegar o atributo  de um elemento da pagina HTML
+--------------------------------------------------------------------
+agora imagine que você entrou em 3 sites, o ddg, o reddit e o youtube
+e você quer ir do ddg para o reddit e do reddit para o youtube
+
+para isso você pode usar: 
+navegador.forward()
+
+e para voltar:
+navegador.back()
+--------------------------------------------------------------------
+se você quiser pegar a url atual você pode fazer o seguinte:
+
+navegador.current_url()
+
+e se você quiser algo ainda mais especifico da url vpcê pode fazer assim:
+
+from urllib import urlparse
+essa biblioteca vai ler a url e selecionar cada elemento especifico da url
+
+urlparse(navegador.current_url)
+>>>parse result(
+	scheme='http',
+	netloc='selenium.dunossauro.live',
+	path='/aula_04.httml',
+	params='',
+	query='',
+	fragment=''
+   )
+--------------------------------------------------------------------
+se você tiver que atualizar a pagina você pode usar:
+
+navegador.refresh()
+--------------------------------------------------------------------
+se quiser o titulo da pagina (que fica lá em cima da pagina):
+
+navegador.title()
